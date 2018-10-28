@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum texts: String {
+private enum StringConstants: String {
     case title = "Title"
     case message = "Here is your alert description"
     
@@ -21,7 +21,7 @@ class TestClass: UIViewController {
     
     override func viewDidLoad() {
         
-        
+        super.viewDidLoad()
     }
     
     func howToCallAlert()
@@ -30,14 +30,14 @@ class TestClass: UIViewController {
         
         // ******************** //
         
-        _ = UIAlertController().showDefaultAlert(texts.title.description, message: texts.message.description, inViewController: self) {
+        UIAlertController.showDefaultAlert(StringConstants.title.description, message: StringConstants.message.description, inViewController: self) {
             
             print("Here's your ok Action")
         }
         
         // ******************** //
         
-        _ = UIAlertController().showDefaultAlertWithBlocks(texts.title.description, message: texts.message.description, inViewController: self, okAction: {
+        UIAlertController.showDefaultAlertWithBlocks(StringConstants.title.description, message: StringConstants.message.description, inViewController: self, okAction: {
             print("Here's your Ok Action")
         }, otherAction: { 
             print("Here's your Cancel Action")
@@ -45,13 +45,13 @@ class TestClass: UIViewController {
         
         // ******************** //
         
-        _ = UIAlertController().showSimpleAlertWithOKBlock(texts.title.description, message: texts.message.description, inViewController: self, okAction: {
+        UIAlertController.showSimpleAlertWithOKBlock(StringConstants.title.description, message: StringConstants.message.description, inViewController: self, okAction: {
             print("Here's your ok Action")
         })
         
         // ******************** //
         
-        _ = UIAlertController().showCustomAlertsWithBlocks(texts.title.description, message: texts.message.description, buttonOneTitle: "Custom Ok Title", buttonTwoTitle: "Custom Cancel title", inViewController: self, okAction: {
+        UIAlertController.showCustomAlertsWithBlocks(StringConstants.title.description, message: StringConstants.message.description, buttonOneTitle: "Custom Ok Title", buttonTwoTitle: "Custom Cancel title", inViewController: self, okAction: {
             print("Here's your Ok Action")
         }, otherAction: { 
             print("Here's your Cancel Action")
@@ -63,10 +63,9 @@ class TestClass: UIViewController {
         
         let titles = ["Tilte1" , "Title2" , "Title3" , "Etc" , "Etc"]
         
-        _ = UIAlertController().showActionSheet(texts.title.description, message: texts.message.description, inViewController: self, buttonNames: titles as NSArray, clickAction: { (buttonIndex) in
+        UIAlertController.showActionSheet(StringConstants.title.description, message: StringConstants.message.description, inViewController: self, buttonNames: titles as NSArray, clickAction: { (buttonIndex) in
             
-            switch buttonIndex
-            {
+            switch buttonIndex {
             case 0:
                 print("Title1 Action")
                 break
@@ -84,5 +83,4 @@ class TestClass: UIViewController {
             }
         })
     }
-    
 }

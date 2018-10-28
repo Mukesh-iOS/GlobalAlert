@@ -42,7 +42,7 @@
                                                         okTitle:(NSString *)okName
                                                     cancelTitle:(NSString *)cancelName;
 
-+(void)showActionSheet : (NSString *)title
++(void)showActionSheet:(NSString *)title
                               message:(NSString*)msg
                      inViewController:(UIViewController*)view
                           buttonNames:(NSArray*)buttonNames

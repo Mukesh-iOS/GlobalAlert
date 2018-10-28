@@ -8,6 +8,9 @@
 
 #import "UIAlertController+ObjCAlert.h"
 
+#define kAlertOk @"OK"
+#define kAlertCancel @"Cancel"
+
 typedef void (^givenIndex)(BOOL success, NSError *error);
 
 @implementation UIAlertController (ObjCAlert)
@@ -23,11 +26,11 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
                             inViewController:(UIViewController *) view
 {
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    
                                                }];
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:kAlertCancel style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * action) {
                                                        [alertCont dismissViewControllerAnimated:YES completion:nil];
                                                    }];
@@ -51,11 +54,11 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 
 {
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    okmethod();
                                                }];
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:kAlertCancel style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * action) {
                                                        [alertCont dismissViewControllerAnimated:YES completion:nil];
                                                    }];
@@ -79,7 +82,7 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 
 {
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    okmethod();
                                                }];
@@ -104,12 +107,12 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 
 {
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    okmethod();
                                                }];
     
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:kAlertCancel style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * action) {
                                                        cancelMethod();
                                                    }];
@@ -166,7 +169,7 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
                     inViewController:(UIViewController *)view
 {
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    
                                                }];
@@ -197,7 +200,7 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
             clickMethod(index);
         }]];
     }
-    [alertCont addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [alertCont addAction:[UIAlertAction actionWithTitle:kAlertCancel style:UIAlertActionStyleCancel handler:nil]];
     [view presentViewController:alertCont animated:YES completion:nil];
 }
 

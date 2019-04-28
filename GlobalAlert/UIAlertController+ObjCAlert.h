@@ -11,42 +11,41 @@
 @interface UIAlertController (ObjCAlert)
 
 +(void)showAlertViewWithTitle:(NSString *)title
-                                    messsage:(NSString *)msg
-                            inViewController:(UIViewController *)view;
+                      messsage:(NSString *)msg
+              inViewController:(UIViewController *)view;
 
 +(void)showAlertViewWithBlock:(NSString *)title
-                                    messsage:(NSString *)msg
-                            inViewController:(UIViewController *)view
-                                      method:(void (^)(void))okmethod;
+                     messsage:(NSString *)msg
+             inViewController:(UIViewController *)view
+                       method:(void (^)(void))okmethod;
 
 +(void)showSimpleAlert:(NSString *)title
-                             message:(NSString *)msg
-                    inViewController:(UIViewController *)view;
+               message:(NSString *)msg
+      inViewController:(UIViewController *)view;
 
 +(void)showAlertWithSimpleOKBlock:(NSString *)title
-                                        messsage:(NSString *)msg
-                                inViewController:(UIViewController *)view
-                                          method:(void (^)(void))okmethod;
+                         messsage:(NSString *)msg
+                 inViewController:(UIViewController *)view
+                           method:(void (^)(void))okmethod;
 
 +(void)showAlertWithSimpleOKCancelBlock:(NSString *)title
-                                              messsage:(NSString *)msg
-                                      inViewController:(UIViewController *) view
-                                                method:(void (^)(void))okmethod
-                                          cancelMethod:(void (^)(void))cancelMethod;
+                               messsage:(NSString *)msg
+                       inViewController:(UIViewController *) view
+                                 method:(void (^)(void))okmethod
+                           cancelMethod:(void (^)(void))cancelMethod;
 
 +(void)showAlertWithSimpleOKCancelBlockWithTitle:(NSString *)title
-                                                       messsage:(NSString *)msg
-                                               inViewController:(UIViewController *) view
-                                                         method:(void (^)(void))okmethod
-                                                   cancelMethod:(void (^)(void))cancelMethod
-                                                        okTitle:(NSString *)okName
-                                                    cancelTitle:(NSString *)cancelName;
+                                        messsage:(NSString *)msg
+                                inViewController:(UIViewController *) view
+                                          method:(void (^)(void))okmethod
+                                    cancelMethod:(void (^)(void))cancelMethod
+                                         okTitle:(NSString *)okName
+                                     cancelTitle:(NSString *)cancelName;
 
 +(void)showActionSheet:(NSString *)title
-                              message:(NSString*)msg
-                     inViewController:(UIViewController*)view
-                          buttonNames:(NSArray*)buttonNames
-                          clickMethod:(void (^)(NSInteger indexOfCLick))clickMethod;
-
+               message:(NSString*)msg
+      inViewController:(UIViewController*)view
+           buttonNames:(NSArray*)buttonNames
+           clickMethod:(void (^)(NSInteger indexOfCLick))clickMethod;
 
 @end

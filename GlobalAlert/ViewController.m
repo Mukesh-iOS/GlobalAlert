@@ -22,8 +22,8 @@
     [super viewDidLoad];
 }
 
--(void)howToUseAlert
-{
+- (void)howToUseAlert {
+    
     // Click on the method definition for detail need of the particular alert
     
     // ******************** //
@@ -86,14 +86,11 @@
                 break;
         }
     }];
-    
-    // ******************** //
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 @end

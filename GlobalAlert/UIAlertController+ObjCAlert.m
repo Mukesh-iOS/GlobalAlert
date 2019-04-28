@@ -22,10 +22,10 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 */
 
 +(void)showAlertViewWithTitle:(NSString *)title
-                                    messsage:(NSString *)msg
-                            inViewController:(UIViewController *) view
-{
-    UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
+                     messsage:(NSString *)msg
+             inViewController:(UIViewController *) view {
+    
+    UIAlertController *alertCont = [UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
                                                    
@@ -48,11 +48,10 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 */
 
 +(void)showAlertViewWithBlock:(NSString *)title
-                                    messsage:(NSString *)msg
-                            inViewController:(UIViewController *) view
-                                      method:(void (^)(void))okmethod
-
-{
+                     messsage:(NSString *)msg
+             inViewController:(UIViewController *) view
+                       method:(void (^)(void))okmethod {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
@@ -76,11 +75,10 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 */
 
 +(void)showAlertWithSimpleOKBlock:(NSString *)title
-                                        messsage:(NSString *)msg
-                                inViewController:(UIViewController *) view
-                                          method:(void (^)(void))okmethod
-
-{
+                         messsage:(NSString *)msg
+                 inViewController:(UIViewController *) view
+                           method:(void (^)(void))okmethod {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
@@ -100,12 +98,11 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
  */
 
 +(void)showAlertWithSimpleOKCancelBlock:(NSString *)title
-                                              messsage:(NSString *)msg
-                                      inViewController:(UIViewController *) view
-                                                method:(void (^)(void))okmethod
-                                          cancelMethod:(void (^)(void))cancelMethod
-
-{
+                               messsage:(NSString *)msg
+                       inViewController:(UIViewController *) view
+                                 method:(void (^)(void))okmethod
+                           cancelMethod:(void (^)(void))cancelMethod {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
@@ -133,14 +130,13 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
  */
 
 +(void)showAlertWithSimpleOKCancelBlockWithTitle:(NSString *)title
-                                                       messsage:(NSString *)msg
-                                               inViewController:(UIViewController *) view
-                                                         method:(void (^)(void))okmethod
-                                                   cancelMethod:(void (^)(void))cancelMethod
-                                                        okTitle:(NSString *)okName
-                                                    cancelTitle:(NSString *)cancelName
-
-{
+                                        messsage:(NSString *)msg
+                                inViewController:(UIViewController *) view
+                                          method:(void (^)(void))okmethod
+                                    cancelMethod:(void (^)(void))cancelMethod
+                                         okTitle:(NSString *)okName
+                                     cancelTitle:(NSString *)cancelName {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:okName style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
@@ -165,9 +161,9 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
 */
 
 +(void)showSimpleAlert:(NSString *)title
-                             message:(NSString *)msg
-                    inViewController:(UIViewController *)view
-{
+               message:(NSString *)msg
+      inViewController:(UIViewController *)view {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* ok = [UIAlertAction actionWithTitle:kAlertOk style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
@@ -187,12 +183,12 @@ typedef void (^givenIndex)(BOOL success, NSError *error);
  
 */
 
-+(void)showActionSheet : (NSString *)title
-                              message:(NSString*)msg
-                     inViewController:(UIViewController*)view
-                          buttonNames:(NSArray*)buttonNames
-                          clickMethod:(void (^)(NSInteger indexOfCLick))clickMethod
-{
++(void)showActionSheet:(NSString *)title
+               message:(NSString*)msg
+      inViewController:(UIViewController*)view
+           buttonNames:(NSArray*)buttonNames
+           clickMethod:(void (^)(NSInteger indexOfCLick))clickMethod {
+    
     UIAlertController *alertCont =[UIAlertController alertControllerWithTitle:title message:msg preferredStyle:UIAlertControllerStyleActionSheet];
     for (NSString *opt in buttonNames) {
         [alertCont addAction:[UIAlertAction actionWithTitle:opt style:UIAlertActionStyleDefault handler:^(UIAlertAction *  action) {

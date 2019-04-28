@@ -24,8 +24,8 @@ class TestClass: UIViewController {
         super.viewDidLoad()
     }
     
-    func howToCallAlert()
-    {
+    func howToCallAlert() {
+        
         // Click on the method definition for detail need of the particular alert
         
         // ******************** //

@@ -31,8 +31,8 @@ extension UIAlertController {
      
      */
     
-    class func showDefaultAlert ( _ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod)
-    {
+    class func showDefaultAlert (_ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: AlertStringConstants.cancel.description, style: .cancel, handler: nil ))
         
@@ -52,7 +52,7 @@ extension UIAlertController {
      
      */
     
-    class func showDefaultAlertWithBlocks ( _ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod, otherAction: @escaping otherMethod){
+    class func showDefaultAlertWithBlocks (_ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod, otherAction: @escaping otherMethod) {
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -77,11 +77,10 @@ extension UIAlertController {
      
      */
     
-    class func showActionSheet ( _ title: String , message: String , inViewController: UIViewController , buttonNames: NSArray , clickAction: @escaping clickMethod )
-    {
+    class func showActionSheet (_ title: String , message: String , inViewController: UIViewController , buttonNames: NSArray , clickAction: @escaping clickMethod) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        for opt in buttonNames
-        {
+        for opt in buttonNames {
             alert.addAction(UIAlertAction(title: opt as? String, style: .default, handler: { (actionIndex : UIAlertAction) -> Void in
                 let index : NSInteger = alert.actions.index(of: actionIndex)! as NSInteger
                 clickAction(index)
@@ -99,7 +98,8 @@ extension UIAlertController {
      
      */
     
-    class func showSimpleAlertWithOKBlock ( _ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod){
+    class func showSimpleAlertWithOKBlock (_ title: String , message: String , inViewController: UIViewController, okAction: @escaping okMethod) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: AlertStringConstants.ok.description, style: .default, handler: { (action:UIAlertAction) -> Void in
@@ -120,8 +120,8 @@ extension UIAlertController {
      
      */
     
-    class func showCustomAlertsWithBlocks ( _ title: String , message: String, buttonOneTitle: String, buttonTwoTitle: String , inViewController: UIViewController, okAction: @escaping okMethod, otherAction: @escaping otherMethod)
-    {
+    class func showCustomAlertsWithBlocks (_ title: String , message: String, buttonOneTitle: String, buttonTwoTitle: String , inViewController: UIViewController, okAction: @escaping okMethod, otherAction: @escaping otherMethod) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: buttonOneTitle, style: .default, handler: { (action:UIAlertAction) -> Void in
